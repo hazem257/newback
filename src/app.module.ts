@@ -8,18 +8,13 @@ import { memoryStorage } from 'multer';
 const mongoUrl = process.env.MONGO_URL;
 if (!mongoUrl) {
   throw new Error('MONGO_URL environment variable is not defined');
-  
 }
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true, // بحيث كل الملفات تشوف المتغيرات
-    }),
+    ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(mongoUrl),
-    MulterModule.register({
-      storage: memoryStorage(), // تخزين مؤقت للملفات
-    }),
+    MulterModule.register({ storage: memoryStorage() }),
     ProjectsModule,
   ],
 })
