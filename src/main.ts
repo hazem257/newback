@@ -7,7 +7,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:5173',       
-      'https://your-vercel-app.vercel.app', 
+      'https://hazemgamal-sable.vercel.app/', 
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
