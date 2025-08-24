@@ -6,13 +6,13 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
-      'http://localhost:5173',       
-      'https://hazemgamal-sable.vercel.app/', 
+      'http://localhost:5173',
+      'https://hazemgamal-sable.vercel.app',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3000, '0.0.0.0');
 }
 bootstrap();
