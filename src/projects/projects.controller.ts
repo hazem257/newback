@@ -51,6 +51,11 @@ export class ProjectsController {
 
     return this.projectsService.create(newProject);
   }
+  @Get('test')
+getTest() {
+  return [{ projectTitle: 'Sample Project', about: 'Just a test', category: ['test'], imgpath: '', live: '', Github: '' }];
+}
+
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.projectsService.delete(id);
